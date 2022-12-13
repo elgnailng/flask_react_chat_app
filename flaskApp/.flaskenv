@@ -1,2 +1,2 @@
-FLASK_DEBUG=restfulAPI
+FLASK_APP=restfulAPI
 FLASK_ENV=development
