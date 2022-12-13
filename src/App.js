@@ -1,11 +1,14 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState} from 'react';
 import './App.css';
 
-import firebase from 'firebase/app';
-import 'firebase/firestore';
-import 'firebase/auth';
-import 'firebase/analytics';
-
+// import firebase from 'firebase/app';
+// import 'firebase/firestore';
+// import 'firebase/auth';
+// import 'firebase/analytics';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
+// import 'firebase/compact/analytics';
 
 
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -33,7 +36,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>⚛️🔥🧪💬</h1>
+        {/* <h1>⚛️🔥🧪💬</h1> */}<h1><span>⚛️🔥🧪</span> Messenger</h1> 
         <SignOut />
       </header>
 
@@ -107,7 +110,7 @@ function ChatRoom() {
         'photoURL': photoURL
       })
     };
-    const backEndResp = await fetch(BASE, requestOptions);
+    await fetch(BASE, requestOptions);
     setFormValue('');
     dummy.current.scrollIntoView({ behavior: 'smooth' });
   }
